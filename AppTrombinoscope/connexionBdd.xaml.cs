@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace AppTrombinoscope
 {
     /// <summary>
-    /// Logique d'interaction pour connexionBdd.xaml
+    /// Logique d'interaction pour ConnexionBdd.xaml
     /// </summary>
-    public partial class connexionBdd : Window
+    public partial class ConnexionBdd : Window
     {
-        public connexionBdd()
+        public ConnexionBdd()
         {
             InitializeComponent();
         }
