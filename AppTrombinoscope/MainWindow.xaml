@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppTrombinoscope"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
+        Title="MainWindow" Height="450" Width="750">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-
             <RowDefinition/>
+
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Menu>
-            <MenuItem Header="_Connexion BDD" Height="50" Click="MenuItem_Click" />
+        <Menu Grid.ColumnSpan="4">
+            <Separator Height="100" Width="10"/>
+            <MenuItem Header="_Connexion BDD" Click="ConnexionBDD_Click" />
             <Separator Width="10"/>
             <MenuItem Header="_Liste du Personnel" />
             <Separator Width="10"/>
@@ -28,6 +36,7 @@
             <MenuItem Header="_Paramètres BDD" />
             <Menu/>
         </Menu>
+        <TextBlock x:Name="textServices" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Text="Services" FontFamily="Arial"/>
 
     </Grid>
 </Window>
