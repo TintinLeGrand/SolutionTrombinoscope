@@ -23,6 +23,12 @@ namespace AppTrombinoscope
         public MainWindow()
         {
             InitializeComponent();
+            LoadServices();
+        }
+
+        private void LoadServices()
+        {
+            //var services = GetallService();
         }
 
         private void ParamBDD_Click(object sender, RoutedEventArgs e)
