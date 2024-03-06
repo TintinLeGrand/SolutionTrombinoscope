@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AppTrombinoscope"
       mc:Ignorable="d" 
-      Title="ConnexionBdd" Height="250" Width="600" Background="#FF313338" Foreground="White">
+      Title="Paramètres d'accès à la base" Height="250" Width="600" Background="#FF313338" Foreground="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,7 +22,7 @@
         <Button x:Name="connexionButton" Content="Connexion" Margin="23,0,23,14" Grid.Row="2" Background="#FF7289DA" BorderBrush="{x:Null}" Foreground="White" FontSize="14" FontFamily="Ubuntu" Height="30" VerticalAlignment="Bottom"/>
         <Button x:Name="annulerButton" Content="Annuler" Margin="23,0,23,14" Grid.Row="2" Background="#FFDA7272" BorderBrush="{x:Null}" Foreground="White" FontSize="14" FontFamily="Ubuntu" Grid.Column="1" Height="30" VerticalAlignment="Bottom"/>
         <TextBox x:Name="nomdutilisateurTextBox" Grid.Column="1" Margin="23,19,23,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF383A40" BorderBrush="#FF676972" Foreground="White" FontFamily="Ubuntu" FontSize="14" BorderThickness="0,0,0,2" Height="30" VerticalAlignment="Top"/>
-        <TextBox x:Name="motdepasseTextBox" Grid.Column="1" Margin="23,19,23,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF383A40" BorderBrush="#FF676972" Foreground="White" FontFamily="Ubuntu" FontSize="14" Grid.Row="1" BorderThickness="0,0,0,2" Height="30" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="motdepasseTextBox" Grid.Column="1" Margin="23,19,23,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF383A40" BorderBrush="#FF676972" Foreground="White" FontFamily="Ubuntu" FontSize="14" Grid.Row="1" BorderThickness="0,0,0,2" Height="30" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

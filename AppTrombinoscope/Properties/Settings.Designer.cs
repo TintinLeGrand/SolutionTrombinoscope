@@ -25,5 +25,10 @@ namespace AppTrombinoscope.Properties
                 return defaultInstance;
             }
         }
+
+        public string AdresseIP { get; internal set; }
+        public string Port { get; internal set; }
+        public string Username { get; internal set; }
+        public string Password { get; internal set; }
     }
 }
