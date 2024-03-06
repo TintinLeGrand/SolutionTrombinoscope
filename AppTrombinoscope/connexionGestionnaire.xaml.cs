@@ -18,7 +18,7 @@ namespace AppTrombinoscope
     /// <summary>
     /// Logique d'interaction pour connexionGestionnaire.xaml
     /// </summary>
-    public partial class connexionGestionnaire : Page
+    public partial class connexionGestionnaire : Window
     {
         public connexionGestionnaire()
         {
