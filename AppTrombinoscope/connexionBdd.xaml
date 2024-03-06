@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppTrombinoscope"
         mc:Ignorable="d"
-        Title="ConnexionBdd" Height="450" Width="800">
+        Title="ConnexionBdd" Height="225" Width="400" Background="#FF313338" Foreground="White">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="nomdutilisateurLabel" Content="Nom d'utilisateur" Margin="23,19" Background="{x:Null}" Foreground="White" FontSize="14" FontFamily="Ubuntu"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="motdepasseLabel" Content="Mot de passe" Margin="23,19" Background="{x:Null}" Foreground="White" FontSize="14" FontFamily="Ubuntu" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Button x:Name="connexionButton" Content="Connexion" Margin="23,0,23,14" Grid.Row="2" Background="#FF7289DA" BorderBrush="{x:Null}" Foreground="White" FontSize="14" FontFamily="Ubuntu" Height="30" VerticalAlignment="Bottom"/>
+        <Button x:Name="annulerButton" Content="Annuler" Margin="23,0,23,14" Grid.Row="2" Background="#FFDA7272" BorderBrush="{x:Null}" Foreground="White" FontSize="14" FontFamily="Ubuntu" Grid.Column="1" Height="30" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="nomdutilisateurTextBox" Grid.Column="1" Margin="23,19" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF383A40" BorderBrush="#FF676972" Foreground="White" FontFamily="Ubuntu" FontSize="14" BorderThickness="0,0,0,2"/>
+        <TextBox x:Name="motdepasseTextBox" Grid.Column="1" Margin="23,19" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF383A40" BorderBrush="#FF676972" Foreground="White" FontFamily="Ubuntu" FontSize="14" Grid.Row="1" BorderThickness="0,0,0,2"/>
+
     </Grid>
 </Window>
