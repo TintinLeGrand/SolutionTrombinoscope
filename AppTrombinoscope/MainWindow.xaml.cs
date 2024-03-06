@@ -25,9 +25,10 @@ namespace AppTrombinoscope
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void ConnexionBDD_Click(object sender, RoutedEventArgs e)
         {
-
+            ConnexionBdd fenetre = new ConnexionBdd();
+            fenetre.Show();
         }
     }
 }
