@@ -26,28 +26,14 @@ namespace AppTrombinoscope
 
         private void enregistrerButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                ConnexionBdd paramBDD = new ConnexionBdd();
-                paramBDD.adresseipTextBox.Text = Properties.Settings.Default.AdresseIP;
-                paramBDD.portecouteTextBox.Text = Properties.Settings.Default.Port;
-                paramBDD.nomdutilisateurTextBox.Text = Properties.Settings.Default.Username;
-                paramBDD.motdepasseTextBox.Password = Properties.Settings.Default.Password;
-                if (paramBDD.ShowDialog() == true)
-                {
-                    Properties.Settings.Default.AdresseIP = paramBDD.adresseipTextBox.Text;
-                    Properties.Settings.Default.Port = paramBDD.portecouteTextBox.Text;
-                    Properties.Settings.Default.Username = paramBDD.nomdutilisateurTextBox.Text;
-                    Properties.Settings.Default.Password = paramBDD.motdepasseTextBox.Password;
-                    Properties.Settings.Default.Save();
-                }
-                Console.WriteLine("L'ouverture des paramètres a fonctionné !");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erreur lors de l'ouverture des parametres !");
-            }
+            this.DialogResult = true;
+            this.Close();
+        }
 
+        private void annulerButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }
