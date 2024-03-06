@@ -25,10 +25,29 @@ namespace AppTrombinoscope
             InitializeComponent();
         }
 
-        private void ConnexionBDD_Click(object sender, RoutedEventArgs e)
+        private void ParamBDD_Click(object sender, RoutedEventArgs e)
         {
-            ConnexionBdd fenetre = new ConnexionBdd();
-            fenetre.Show();
+            try
+            {
+                ConnexionBdd paramBDD = new ConnexionBdd();
+                paramBDD.adresseipTextBox.Text = Properties.Settings.Default.AdresseIP;
+                paramBDD.portecouteTextBox.Text = Properties.Settings.Default.Port;
+                paramBDD.nomdutilisateurTextBox.Text = Properties.Settings.Default.Username;
+                paramBDD.motdepasseTextBox.Password = Properties.Settings.Default.Password;
+                if (paramBDD.ShowDialog() == true)
+                {
+                    Properties.Settings.Default.AdresseIP = paramBDD.adresseipTextBox.Text;
+                    Properties.Settings.Default.Port = paramBDD.portecouteTextBox.Text;
+                    Properties.Settings.Default.Username = paramBDD.nomdutilisateurTextBox.Text;
+                    Properties.Settings.Default.Password = paramBDD.motdepasseTextBox.Password;
+                    Properties.Settings.Default.Save();
+                }
+                Console.WriteLine("L'ouverture des paramètres a fonctionné !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur lors de l'ouverture des parametres !");
+            }
         }
     }
 }
