@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppTrombinoscope"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_Connexion BDD" Height="50" Click="MenuItem_Click" />
+            <Separator Width="10"/>
+            <MenuItem Header="_Liste du Personnel" />
+            <Separator Width="10"/>
+            <MenuItem Header="_Gestion">
+                <MenuItem Header="_Services" />
+                <MenuItem Header="_Fonctions" />
+                <MenuItem Header="_Personnels" />
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="_Gestionaire" />
+            <Separator Width="10"/>
+            <MenuItem Header="_Paramètres BDD" />
+            <Menu/>
+        </Menu>
+
     </Grid>
 </Window>
