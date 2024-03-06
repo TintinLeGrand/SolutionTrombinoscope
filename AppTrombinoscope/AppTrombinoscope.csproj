@@ -108,5 +108,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DllbddPersonnels\DllbddPersonnels.csproj">
+      <Project>{0db98971-e24f-4a98-a98c-b36e32be992b}</Project>
+      <Name>DllbddPersonnels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

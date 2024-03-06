@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DllbddPersonnels;
 
 namespace AppTrombinoscope
 {
@@ -20,15 +21,26 @@ namespace AppTrombinoscope
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private bddpersonnels bddPersonnels;
+
         public MainWindow()
         {
             InitializeComponent();
-            LoadServices();
+            bddPersonnels = new bddpersonnels("user","mdp", "serveurIp", "port");
+            LoadData();
         }
 
-        private void LoadServices()
+        private void LoadData()
         {
-            //var services = GetallService();
+            var services = bddPersonnels.GetallService();
+            listeServices.ItemsSource = services;
+
+            var fonctions = bddPersonnels.GetallFonction();
+            listeFonctions.ItemsSource = fonctions;
+
+            var membres = bddPersonnels.GetallPersonnel();
+            listeFonctions.ItemsSource = membres;
         }
 
         private void ParamBDD_Click(object sender, RoutedEventArgs e)
