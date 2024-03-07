@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using BddpersonnelContext;
 using DllbddPersonnels;
 
 namespace AppTrombinoscope
@@ -13,6 +14,18 @@ namespace AppTrombinoscope
             this.bddPersonnels = bddPersonnels;
         }
 
-
+        private void buttonAddService_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Service service = new Service();
+                service.Intitule = inputAddService.Text;
+                bddPersonnels.NewFonction(service);
+            }
+            catch
+            {
+                MessageBox.Show("Problème d'enregistrement");
+            }
+        }
     }
 }

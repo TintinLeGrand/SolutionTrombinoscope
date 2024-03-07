@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BddpersonnelContext;
+using DllbddPersonnels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,25 @@ namespace AppTrombinoscope
     /// </summary>
     public partial class GestionFonction : Window
     {
-        public GestionFonction()
+        bddpersonnels bddPersonnels;
+        public GestionFonction(bddpersonnels bddPersonnels)
         {
             InitializeComponent();
+            this.bddPersonnels = bddPersonnels;
+        }
+
+        private void buttonAddService_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Fonction fonction = new Fonction();
+                fonction.Intitule = inputAddFct.Text;
+                bddPersonnels.NewFonction(fonction);
+            }
+            catch
+            {
+                MessageBox.Show("Problème d'enregistrement");
+            }
         }
     }
 }

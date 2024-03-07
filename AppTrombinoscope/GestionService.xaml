@@ -23,7 +23,7 @@
         <TextBlock x:Name="ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="323,158,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Ajouter" VerticalAlignment="Top" FontSize="16" Foreground="#FFC9C9C9"/>
         <Grid Grid.Column="1" Margin="420,209,138,61" Grid.Row="2">
             <TextBox x:Name="inputAddService" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FF424549" Foreground="White" FontSize="14"/>
-            <Button x:Name="buttonAddService" Content="+" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Top" Width="25" Height="23" Background="#FF7289DA" Foreground="White" FontSize="18" FontFamily="Stencil" FontWeight="Bold"/>
+            <Button x:Name="buttonAddService" Content="+" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Top" Width="25" Height="23" Background="#FF7289DA" Foreground="White" FontSize="18" FontFamily="Stencil" FontWeight="Bold" Click="buttonAddService_Click"/>
 
         </Grid>
         <Button x:Name="buttonSuppService" Content="X" HorizontalAlignment="Left" Margin="363,54,0,0" VerticalAlignment="Top" Width="76" Height="32" Background="#FFB32D2E" Foreground="White" FontFamily="Tahoma" FontWeight="Bold" Grid.Column="1" Grid.Row="2" FontSize="22"/>
