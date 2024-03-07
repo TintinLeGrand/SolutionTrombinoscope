@@ -81,7 +81,7 @@ namespace AppTrombinoscope
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void ConnBDD_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -128,7 +128,7 @@ namespace AppTrombinoscope
             LoadData();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void Gestionnaire_Click(object sender, RoutedEventArgs e)
         {
             try
             {

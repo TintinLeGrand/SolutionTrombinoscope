@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <Menu Grid.ColumnSpan="4" Background="#FF36393E" Foreground="White">
             <Separator Height="100" Width="10"/>
-            <MenuItem x:Name="connectionButton" Header="_Connexion BDD" Click="MenuItem_Click" />
+            <MenuItem x:Name="connectionButton" Header="_Connexion BDD" Click="ConnBDD_Click" />
             <Separator Width="10"/>
             <MenuItem Name="listepersonnelButton" Header="_Liste du Personnel" IsEnabled="False" />
             <Separator Width="10"/>
@@ -31,7 +31,7 @@
                 <MenuItem x:Name="personnel" Header="_Personnels" Background="#FF282B30" />
             </MenuItem>
             <Separator Width="10"/>
-            <MenuItem x:Name="gestionnaireButton" Header="_Gestionnaire" Click="MenuItem_Click_1" />
+            <MenuItem x:Name="gestionnaireButton" Header="_Gestionnaire" Click="Gestionnaire_Click" />
             <Separator Width="10"/>
             <MenuItem x:Name="paramBDDButton" Header="_Paramètres BDD" Click="ParamBDD_Click"/>
             <Menu/>
