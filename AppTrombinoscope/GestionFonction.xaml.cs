@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BddpersonnelContext;
+using DllbddPersonnels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,48 @@ namespace AppTrombinoscope
     /// </summary>
     public partial class GestionFonction : Window
     {
-        public GestionFonction()
+        bddpersonnels bddPersonnels;
+        public GestionFonction(bddpersonnels bddPersonnels)
         {
             InitializeComponent();
+            this.bddPersonnels = bddPersonnels;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            if (bddPersonnels != null)
+            {
+                try
+                {
+                    var fonctions = bddPersonnels.GetAllFonction();
+                    listeFctGest.ItemsSource = bddPersonnels.GetAllFonction().ToArray();
+                }
+                catch
+                {
+                    MessageBox.Show("Erreur lors de la récupération des données");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a aucune connexion à la base de données.");
+            }
+
+        }
+
+        private void buttonAddService_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Fonction fonction = new Fonction();
+                fonction.Intitule = inputAddFct.Text;
+                bddPersonnels.NewFonction(fonction);
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Problème d'enregistrement");
+            }
         }
     }
 }

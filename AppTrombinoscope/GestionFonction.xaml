@@ -18,12 +18,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="titreFonctions" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Fonctions" VerticalAlignment="Top" FontSize="24" Grid.Row="1" Grid.Column="1" Height="42" Width="270"/>
-        <ListBox x:Name="listeFctGest" Grid.Column="1" HorizontalAlignment="Left" Height="293" Grid.Row="2" VerticalAlignment="Top" Width="270" Background="#FF282B30" Foreground="White"/>
+        <ListBox x:Name="listeFctGest" Grid.Column="1" HorizontalAlignment="Left" Height="293" Grid.Row="2" VerticalAlignment="Top" Width="270" Background="#FF282B30" Foreground="White" DisplayMemberPath="Intitule"/>
         <Separator Grid.Column="1" Height="27" Margin="323,126,0,0" Grid.Row="2" Width="345" Background="White" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBlock x:Name="ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="323,158,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Ajouter" VerticalAlignment="Top" FontSize="16" Foreground="#FFC9C9C9"/>
         <Grid Grid.Column="1" Margin="420,209,138,61" Grid.Row="2">
             <TextBox x:Name="inputAddFct" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FF424549" Foreground="White" FontSize="14"/>
-            <Button x:Name="buttonAddService" Content="+" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Top" Width="25" Height="23" Background="#FF7289DA" Foreground="White" FontSize="18" FontFamily="Stencil" FontWeight="Bold"/>
+            <Button x:Name="buttonAddService" Content="+" HorizontalAlignment="Left" Margin="130,0,0,0" Width="25" Background="#FF7289DA" Foreground="White" FontSize="18" FontFamily="Stencil" FontWeight="Bold" Click="buttonAddService_Click"/>
 
         </Grid>
         <Button x:Name="buttonSuppFct" Content="X" HorizontalAlignment="Left" Margin="363,54,0,0" VerticalAlignment="Top" Width="76" Height="32" Background="#FFB32D2E" Foreground="White" FontFamily="Tahoma" FontWeight="Bold" Grid.Column="1" Grid.Row="2" FontSize="22"/>

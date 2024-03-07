@@ -28,6 +28,11 @@ namespace DllbddPersonnels
             }
         }
 
+        public void NewFonction(Service service)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Service> GetAllService()
         {
             try
@@ -51,5 +56,45 @@ namespace DllbddPersonnels
                 throw;
             }
         }
+
+        public void NewFonction(Fonction fn)
+        {
+            try
+            {
+                bdd.Fonctions.InsertOnSubmit(fn);
+                bdd.SubmitChanges();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public void NewService(Service sv)
+        {
+            try
+            {
+                bdd.Services.InsertOnSubmit(sv);
+                bdd.SubmitChanges();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void NewPersonnel(Personnel ps)
+        {
+            try
+            {
+                bdd.Personnels.InsertOnSubmit(ps);
+                bdd.SubmitChanges();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
     }
 }

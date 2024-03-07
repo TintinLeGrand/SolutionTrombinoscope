@@ -15,10 +15,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UsernameADM" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">UtilisateurBDD</Value>
+      <Value Profile="(Default)">GestionnaireBDD</Value>
     </Setting>
     <Setting Name="PasswordADM" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Password1234@</Value>
+      <Value Profile="(Default)">Password1234@but</Value>
     </Setting>
   </Settings>
 </SettingsFile>
