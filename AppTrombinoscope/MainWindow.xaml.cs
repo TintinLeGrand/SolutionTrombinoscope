@@ -94,6 +94,34 @@ namespace AppTrombinoscope
 
         }
 
+        private void Services_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                GestionService fenetre = new GestionService(this.bddPersonnels);
+                fenetre.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Problème");
+            }
+
+        }
+
+        private void Fonctions_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                GestionFonction fenetre = new GestionFonction(this.bddPersonnels);
+                fenetre.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Problème");
+            }
+
+        }
+
         private void Connexion()
         {
             this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
