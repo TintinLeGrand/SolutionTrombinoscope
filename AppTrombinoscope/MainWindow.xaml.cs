@@ -11,12 +11,11 @@ namespace AppTrombinoscope
         public MainWindow()
         {
             InitializeComponent();
-            LoadData();
+           
         }
 
         private void LoadData()
         {
-            this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
             if (bddPersonnels != null)
             {
                 var services = bddPersonnels.GetallService();
@@ -61,7 +60,17 @@ namespace AppTrombinoscope
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
+            try
+            {
+                this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Changez vos paramètres de connexion","Échec de connexion à la BDD");
+
+            }
+            
         }
     }
 }
