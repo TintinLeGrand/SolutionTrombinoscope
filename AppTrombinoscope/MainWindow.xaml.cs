@@ -1,46 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DllbddPersonnels;
 
 namespace AppTrombinoscope
 {
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-
         private bddpersonnels bddPersonnels;
 
         public MainWindow()
         {
             InitializeComponent();
-            bddPersonnels = new bddpersonnels("user","mdp", "serveurIp", "port");
             LoadData();
         }
 
         private void LoadData()
         {
-            var services = bddPersonnels.GetallService();
-            listeServices.ItemsSource = services;
+            this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
+            if (bddPersonnels != null)
+            {
+                var services = bddPersonnels.GetallService();
+                listeServices.ItemsSource = services;
 
-            var fonctions = bddPersonnels.GetallFonction();
-            listeFonctions.ItemsSource = fonctions;
+                var fonctions = bddPersonnels.GetallFonction();
+                listeFonctions.ItemsSource = fonctions;
 
-            var membres = bddPersonnels.GetallPersonnel();
-            listeFonctions.ItemsSource = membres;
+                var membres = bddPersonnels.GetallPersonnel();
+                listeMembres.ItemsSource = membres;
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a aucune connexion à la base de données.");
+            }
         }
 
         private void ParamBDD_Click(object sender, RoutedEventArgs e)
@@ -66,6 +57,11 @@ namespace AppTrombinoscope
             {
                 MessageBox.Show(ex.Message, "Erreur lors de l'ouverture des parametres !");
             }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
         }
     }
 }

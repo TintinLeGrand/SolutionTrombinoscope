@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppTrombinoscope"
         mc:Ignorable="d"
-        Title="Connexion gestionnaire" Height="400" Width="600" Background="#FF313338" Foreground="White">
+        Title="Paramètres de la BDD" Height="400" Width="600" Background="#FF313338" Foreground="White">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.75*"/>

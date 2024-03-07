@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AppTrombinoscope"
       mc:Ignorable="d" 
-      Title="Paramètres d'accès à la base" Height="250" Width="600" Background="#FF313338" Foreground="White">
+      Title="Connexion gestionnaire" Height="250" Width="600" Background="#FF313338" Foreground="White">
 
     <Grid>
         <Grid.RowDefinitions>
