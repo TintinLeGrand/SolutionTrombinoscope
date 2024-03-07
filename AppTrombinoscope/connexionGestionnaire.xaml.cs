@@ -24,5 +24,17 @@ namespace AppTrombinoscope
         {
             InitializeComponent();
         }
+
+        private void connexionButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.Close();
+        }
+
+        private void annulerButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
+        }
     }
 }

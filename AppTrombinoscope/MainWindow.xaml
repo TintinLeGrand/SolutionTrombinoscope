@@ -31,7 +31,7 @@
                 <MenuItem Header="_Personnels" />
             </MenuItem>
             <Separator Width="10"/>
-            <MenuItem Header="_Gestionaire" />
+            <MenuItem Header="_Gestionaire" Click="MenuItem_Click_1" />
             <Separator Width="10"/>
             <MenuItem x:Name="paramBDD" Header="_Paramètres BDD" Click="ParamBDD_Click"/>
             <Menu/>

@@ -11,7 +11,9 @@ namespace AppTrombinoscope
         public MainWindow()
         {
             InitializeComponent();
-           
+            Properties.Settings.Default.AdresseIP = "127.0.0.1";
+            Properties.Settings.Default.Port = "3306";
+
         }
 
         private void LoadData()
@@ -71,6 +73,27 @@ namespace AppTrombinoscope
 
             }
             
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ConnexionBdd paramBDD = new ConnexionBdd();
+                paramBDD.nomdutilisateurTextBox.Text = Properties.Settings.Default.Username;
+                paramBDD.motdepasseTextBox.Password = Properties.Settings.Default.Password;
+                if (paramBDD.ShowDialog() == true)
+                {
+                    Properties.Settings.Default.Username = paramBDD.nomdutilisateurTextBox.Text;
+                    Properties.Settings.Default.Password = paramBDD.motdepasseTextBox.Password;
+                    Properties.Settings.Default.Save();
+                }
+                Console.WriteLine("L'ouverture des paramètres a fonctionné !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur lors de l'ouverture des parametres !");
+            }
         }
     }
 }
