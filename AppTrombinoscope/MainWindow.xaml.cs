@@ -35,6 +35,18 @@ namespace AppTrombinoscope
             }
         }
 
+        private void estGestionnaire (String user, String password)
+        {
+            if(user == "admin" && password == "Password1234!")
+            {
+                MessageBox.Show("ok");
+            }
+            else {
+                MessageBox.Show("Les identifiants sont incorrectes.");
+                // Grissage
+            }
+        }
+
         private void ParamBDD_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -64,36 +76,38 @@ namespace AppTrombinoscope
         {
             try
             {
-                this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
-                LoadData();
+                Connexion();
             }
             catch
             {
-                MessageBox.Show("Changez vos paramètres de connexion","Échec de connexion à la BDD");
-
+                MessageBox.Show("Des paramètres sont incorrectes");
             }
-            
+
+        }
+
+        private void Connexion()
+        {
+            this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
+            LoadData();
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                ConnexionBdd paramBDD = new ConnexionBdd();
-                paramBDD.nomdutilisateurTextBox.Text = Properties.Settings.Default.Username;
-                paramBDD.motdepasseTextBox.Password = Properties.Settings.Default.Password;
-                if (paramBDD.ShowDialog() == true)
+            connexionGestionnaire gestionnaireBDD = new connexionGestionnaire();
+                if (gestionnaireBDD.ShowDialog() == true)
                 {
-                    Properties.Settings.Default.Username = paramBDD.nomdutilisateurTextBox.Text;
-                    Properties.Settings.Default.Password = paramBDD.motdepasseTextBox.Password;
-                    Properties.Settings.Default.Save();
+                    try
+                    {
+                        Connexion();
+                        estGestionnaire(gestionnaireBDD.nomdutilisateurTextBox.Text, gestionnaireBDD.motdepasseTextBox.Password);
+                    }
+                    catch
+                    {
+                        gestionnaireBDD.motdepasseTextBox.Password = "";
+                        MessageBox.Show("Vous n'êtes pas connecté à la BDD.");
+                    }
                 }
                 Console.WriteLine("L'ouverture des paramètres a fonctionné !");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erreur lors de l'ouverture des parametres !");
-            }
         }
     }
 }
