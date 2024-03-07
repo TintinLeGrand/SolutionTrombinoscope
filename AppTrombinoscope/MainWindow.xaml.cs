@@ -11,10 +11,10 @@ namespace AppTrombinoscope
         public MainWindow()
         {
             InitializeComponent();
-            Properties.Settings.Default.AdresseIP = "127.0.0.1";
-            Properties.Settings.Default.Port = "3306";
-            Properties.Settings.Default.Username = "GestionnaireBDD";
-            Properties.Settings.Default.Password = "Password1234@but";
+            //Properties.Settings.Default.AdresseIP = "127.0.0.1";
+            //Properties.Settings.Default.Port = "3306";
+            //Properties.Settings.Default.Username = "GestionnaireBDD";
+            //Properties.Settings.Default.Password = "Password1234@but";
 
         }
 
@@ -43,6 +43,7 @@ namespace AppTrombinoscope
             {
                 listepersonnelButton.IsEnabled = true;
                 gestionButton.IsEnabled = true;
+                bddPersonnels = new bddpersonnels(Properties.Settings.Default.UsernameADM, Properties.Settings.Default.PasswordADM, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);
             }
             else {
                 listepersonnelButton.IsEnabled = false;
