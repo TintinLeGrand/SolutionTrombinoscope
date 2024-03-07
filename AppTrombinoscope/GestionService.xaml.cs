@@ -9,8 +9,8 @@ namespace AppTrombinoscope
 
         public GestionService(bddpersonnels bddPersonnels)
         {
-            this.bddPersonnels = bddPersonnels;
             InitializeComponent();
+            this.bddPersonnels = bddPersonnels;
         }
 
 
