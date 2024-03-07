@@ -73,7 +73,7 @@ namespace AppTrombinoscope.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("UtilisateurBDD")]
+        [global::System.Configuration.DefaultSettingValueAttribute("GestionnaireBDD")]
         public string UsernameADM {
             get {
                 return ((string)(this["UsernameADM"]));
@@ -82,7 +82,7 @@ namespace AppTrombinoscope.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Password1234@")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Password1234@but")]
         public string PasswordADM {
             get {
                 return ((string)(this["PasswordADM"]));

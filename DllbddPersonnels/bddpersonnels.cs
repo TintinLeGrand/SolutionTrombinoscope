@@ -61,7 +61,8 @@ namespace DllbddPersonnels
         {
             try
             {
-                bdd.Fonctions.Append(fn);
+                bdd.Fonctions.InsertOnSubmit(fn);
+                bdd.SubmitChanges();
             }
             catch
             {
@@ -72,7 +73,8 @@ namespace DllbddPersonnels
         {
             try
             {
-                bdd.Services.Append(sv);
+                bdd.Services.InsertOnSubmit(sv);
+                bdd.SubmitChanges();
             }
             catch
             {
@@ -84,7 +86,8 @@ namespace DllbddPersonnels
         {
             try
             {
-                bdd.Personnels.Append(ps);
+                bdd.Personnels.InsertOnSubmit(ps);
+                bdd.SubmitChanges();
             }
             catch
             {
