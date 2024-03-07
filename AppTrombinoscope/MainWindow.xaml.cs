@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using BddpersonnelContext;
 using DllbddPersonnels;
 
 namespace AppTrombinoscope
@@ -11,30 +12,33 @@ namespace AppTrombinoscope
         public MainWindow()
         {
             InitializeComponent();
-            //Properties.Settings.Default.AdresseIP = "127.0.0.1";
-            //Properties.Settings.Default.Port = "3306";
-            //Properties.Settings.Default.Username = "GestionnaireBDD";
-            //Properties.Settings.Default.Password = "Password1234@but";
-
         }
 
         private void LoadData()
         {
             if (bddPersonnels != null)
             {
-                var services = bddPersonnels.GetallService();
-                listeServices.ItemsSource = services;
+                try
+                {
+                    var services = bddPersonnels.GetAllService();
+                    listeServices.ItemsSource = bddPersonnels.GetAllService().ToArray();
 
-                var fonctions = bddPersonnels.GetallFonction();
-                listeFonctions.ItemsSource = fonctions;
+                    var fonctions = bddPersonnels.GetAllFonction();
+                    listeFonctions.ItemsSource = bddPersonnels.GetAllFonction().ToArray();
 
-                var membres = bddPersonnels.GetallPersonnel();
-                listeMembres.ItemsSource = membres;
+                    var membres = bddPersonnels.GetAllPersonnel();
+                    listeMembres.ItemsSource = bddPersonnels.GetAllPersonnel().ToArray();
+                }
+                catch
+                {
+                    MessageBox.Show("Erreur lors de la récupération des données");
+                }
             }
             else
             {
                 MessageBox.Show("Il n'y a aucune connexion à la base de données.");
             }
+
         }
 
         private void estGestionnaire (String user, String password)

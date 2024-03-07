@@ -10,33 +10,46 @@ namespace DllbddPersonnels
     public class bddpersonnels
     {
         private BddpersonnelDataContext bdd;
+
         public bddpersonnels(String user, String mdp, String serveurIp, String port)
         {
             this.bdd = new BddpersonnelDataContext("User Id=" + user + ";Password=" + mdp + ";Host=" + serveurIp + ";Port=" + port + ";Database=bddpersonnels;Persist Security Info=True");
         }
-        public List<Personnel> GetallPersonnel()
+
+        public List<Personnel> GetAllPersonnel()
         {
             try
             {
                 return bdd.Personnels.ToList();
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
-        public List<Service> GetallService()
+
+        public List<Service> GetAllService()
         {
             try
             {
                 return bdd.Services.ToList();
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
-        public List<Fonction> GetallFonction()
+
+        public List<Fonction> GetAllFonction()
         {
             try
             {
                 return bdd.Fonctions.ToList();
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

@@ -37,11 +37,11 @@
             <Menu/>
         </Menu>
         <TextBlock x:Name="textServices" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Text="Services" FontFamily="Arial"/>
-        <ListBox x:Name="listeServices" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Background="#FF36393E" Foreground="White" />
+        <ListBox x:Name="listeServices" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Background="#FF36393E" Foreground="White" DisplayMemberPath="Intitule"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Fonctions" VerticalAlignment="Top"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Membres" VerticalAlignment="Top"/>
-        <ListBox x:Name="listeFonctions" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="1" Background="#FF36393E" Foreground="White"/>
-        <ListBox x:Name="listeMembres" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="2" Background="#FF36393E" Foreground="White"/>
+        <ListBox x:Name="listeFonctions" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="1" Background="#FF36393E" Foreground="White"  DisplayMemberPath="Intitule"/>
+        <ListBox x:Name="listeMembres" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="2" Background="#FF36393E" Foreground="White"  DisplayMemberPath="Prenom"/>
         <Grid Grid.Column="3" Grid.Row="1" Margin="23,69,23,0" Height="58" VerticalAlignment="Top">
             <TextBlock Margin="0,1,158,16" TextWrapping="Wrap" Text="Nom :"/>
             <TextBlock Margin="0,37,138,0" TextWrapping="Wrap" Text="Prénom :"/>
