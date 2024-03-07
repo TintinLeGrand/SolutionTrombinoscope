@@ -13,6 +13,8 @@ namespace AppTrombinoscope
             InitializeComponent();
             Properties.Settings.Default.AdresseIP = "127.0.0.1";
             Properties.Settings.Default.Port = "3306";
+            Properties.Settings.Default.Username = "GestionnaireBDD";
+            Properties.Settings.Default.Password = "Password1234@but";
 
         }
 
@@ -39,11 +41,13 @@ namespace AppTrombinoscope
         {
             if(user == "admin" && password == "Password1234!")
             {
-                MessageBox.Show("ok");
+                listepersonnelButton.IsEnabled = true;
+                gestionButton.IsEnabled = true;
             }
             else {
+                listepersonnelButton.IsEnabled = false;
+                gestionButton.IsEnabled = false;
                 MessageBox.Show("Les identifiants sont incorrectes.");
-                // Grissage
             }
         }
 
@@ -93,20 +97,21 @@ namespace AppTrombinoscope
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Connexion();
+            }
+            catch
+            {
+                MessageBox.Show("Vous n'êtes pas connecté à la BDD.");
+                return;
+            }
             connexionGestionnaire gestionnaireBDD = new connexionGestionnaire();
                 if (gestionnaireBDD.ShowDialog() == true)
                 {
-                    try
-                    {
-                        Connexion();
-                        estGestionnaire(gestionnaireBDD.nomdutilisateurTextBox.Text, gestionnaireBDD.motdepasseTextBox.Password);
-                    }
-                    catch
-                    {
-                        gestionnaireBDD.motdepasseTextBox.Password = "";
-                        MessageBox.Show("Vous n'êtes pas connecté à la BDD.");
-                    }
-                }
+
+                estGestionnaire(gestionnaireBDD.nomdutilisateurTextBox.Text, gestionnaireBDD.motdepasseTextBox.Password);
+            }
                 Console.WriteLine("L'ouverture des paramètres a fonctionné !");
         }
     }
