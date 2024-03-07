@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppTrombinoscope"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="750">
+        Title="MainWindow" Height="450" Width="750" Background="#FF424549" Foreground="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -19,29 +19,29 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Menu Grid.ColumnSpan="4">
+        <Menu Grid.ColumnSpan="4" Background="#FF36393E" Foreground="White">
             <Separator Height="100" Width="10"/>
-            <MenuItem Header="_Connexion BDD" Click="MenuItem_Click" />
+            <MenuItem x:Name="buttonConnex" Header="_Connexion BDD" Click="MenuItem_Click" />
             <Separator Width="10"/>
-            <MenuItem Header="_Liste du Personnel" />
+            <MenuItem x:Name="buttonList" Header="_Liste du Personnel" />
             <Separator Width="10"/>
-            <MenuItem Header="_Gestion">
-                <MenuItem Header="_Services" />
-                <MenuItem Header="_Fonctions" />
-                <MenuItem Header="_Personnels" />
+            <MenuItem x:Name="buttonGestion" Header="_Gestion">
+                <MenuItem x:Name="service" Header="_Services" />
+                <MenuItem x:Name="fonction" Header="_Fonctions" />
+                <MenuItem x:Name="personnel" Header="_Personnels" />
             </MenuItem>
             <Separator Width="10"/>
-            <MenuItem Header="_Gestionaire" Click="MenuItem_Click_1" />
+            <MenuItem x:Name="buttonGestionnaire" Header="_Gestionnaire" Click="MenuItem_Click_1" />
             <Separator Width="10"/>
             <MenuItem x:Name="paramBDD" Header="_Paramètres BDD" Click="ParamBDD_Click"/>
             <Menu/>
         </Menu>
         <TextBlock x:Name="textServices" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Text="Services" FontFamily="Arial"/>
-        <ListBox x:Name="listeServices" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" />
+        <ListBox x:Name="listeServices" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Background="#FF36393E" Foreground="White" />
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Fonctions" VerticalAlignment="Top"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Membres" VerticalAlignment="Top"/>
-        <ListBox x:Name="listeFonctions" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="1"/>
-        <ListBox x:Name="listeMembres" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="2"/>
+        <ListBox x:Name="listeFonctions" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="1" Background="#FF36393E" Foreground="White"/>
+        <ListBox x:Name="listeMembres" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="2" Background="#FF36393E" Foreground="White"/>
         <Grid Grid.Column="3" Grid.Row="1" Margin="23,69,23,0" Height="58" VerticalAlignment="Top">
             <TextBlock Margin="0,1,158,16" TextWrapping="Wrap" Text="Nom :"/>
             <TextBlock Margin="0,37,138,0" TextWrapping="Wrap" Text="Prénom :"/>
