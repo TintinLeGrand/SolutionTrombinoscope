@@ -18,7 +18,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="titreServices" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Services" VerticalAlignment="Top" FontSize="24" Grid.Row="1" Grid.Column="1" Height="42" Width="93"/>
-        <ListBox x:Name="listeServicesGest" Grid.Column="1" HorizontalAlignment="Left" Height="293" Grid.Row="2" VerticalAlignment="Top" Width="270" Background="#FF282B30" Foreground="White"/>
+        <ListBox x:Name="listeServicesGest" Grid.Column="1" HorizontalAlignment="Left" Height="293" Grid.Row="2" VerticalAlignment="Top" Width="270" Background="#FF282B30" Foreground="White" DisplayMemberPath="Intitule"/>
         <Separator Grid.Column="1" Height="27" Margin="323,126,0,0" Grid.Row="2" Width="345" Background="White" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBlock x:Name="ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="323,158,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Ajouter" VerticalAlignment="Top" FontSize="16" Foreground="#FFC9C9C9"/>
         <Grid Grid.Column="1" Margin="420,209,138,61" Grid.Row="2">

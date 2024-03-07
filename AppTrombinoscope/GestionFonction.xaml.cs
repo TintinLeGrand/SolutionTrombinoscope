@@ -26,6 +26,28 @@ namespace AppTrombinoscope
         {
             InitializeComponent();
             this.bddPersonnels = bddPersonnels;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            if (bddPersonnels != null)
+            {
+                try
+                {
+                    var fonctions = bddPersonnels.GetAllFonction();
+                    listeFctGest.ItemsSource = bddPersonnels.GetAllFonction().ToArray();
+                }
+                catch
+                {
+                    MessageBox.Show("Erreur lors de la récupération des données");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a aucune connexion à la base de données.");
+            }
+
         }
 
         private void buttonAddService_Click(object sender, RoutedEventArgs e)
@@ -35,6 +57,7 @@ namespace AppTrombinoscope
                 Fonction fonction = new Fonction();
                 fonction.Intitule = inputAddFct.Text;
                 bddPersonnels.NewFonction(fonction);
+                LoadData();
             }
             catch
             {
