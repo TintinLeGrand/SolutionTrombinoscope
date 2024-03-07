@@ -25,7 +25,7 @@
             <Separator Width="10"/>
             <MenuItem x:Name="buttonList" Header="_Liste du Personnel" />
             <Separator Width="10"/>
-            <MenuItem x:Name="buttonGestion" Header="_Gestion">
+            <MenuItem x:Name="buttonGestion" Header="_Gestion" Foreground="White">
                 <MenuItem x:Name="service" Header="_Services" />
                 <MenuItem x:Name="fonction" Header="_Fonctions" />
                 <MenuItem x:Name="personnel" Header="_Personnels" />
