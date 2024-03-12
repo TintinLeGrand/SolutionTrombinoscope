@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BddpersonnelContext;
+using DllbddPersonnels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AppTrombinoscope
 {
@@ -19,9 +9,64 @@ namespace AppTrombinoscope
     /// </summary>
     public partial class GestionPerso : Window
     {
+
+        bddpersonnels bddPersonnels;
+
         public GestionPerso()
         {
             InitializeComponent();
+        }
+
+        private void LoadData()
+        {
+            if (bddPersonnels != null)
+            {
+                try
+                {
+                    var services = bddPersonnels.GetAllService();
+                    serviceList.ItemsSource = bddPersonnels.GetAllService().ToArray();
+
+                    var fonctions = bddPersonnels.GetAllFonction();
+                    fonctionList.ItemsSource = bddPersonnels.GetAllFonction().ToArray();
+                }
+                catch
+                {
+                    MessageBox.Show("Erreur lors de la récupération des données");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a aucune connexion à la base de données.");
+            }
+
+        }
+
+
+
+        private void enregistrerButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Personnel personnel = new Personnel();
+                personnel.Id = 10;
+                //personnel.Nom = inputAddPerso.Text;
+                bddPersonnels.NewPersonnel(personnel);
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Problème d'enregistrement");
+            }
+        }
+
+        private void annulerButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
+        }
+
+        private void changerPhoto_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
         }
     }
 }
