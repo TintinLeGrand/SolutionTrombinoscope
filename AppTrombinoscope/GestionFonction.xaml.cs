@@ -43,8 +43,13 @@ namespace AppTrombinoscope
             try
             {
                 Fonction fonction = new Fonction();
+                if(inputAddFct.Text == "")
+                {
+                    throw new System.Exception();
+                }
                 fonction.Intitule = inputAddFct.Text;
                 bddPersonnels.NewFonction(fonction);
+                inputAddFct.Text = "";
                 LoadData();
             }
             catch

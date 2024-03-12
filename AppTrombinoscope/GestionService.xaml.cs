@@ -42,9 +42,9 @@ namespace AppTrombinoscope
             try
             {
                 Service service = new Service();
-                service.Id = 10;
                 service.Intitule = inputAddService.Text;
                 bddPersonnels.NewService(service);
+                inputAddService.Text = "";
                 LoadData();
             }
             catch
