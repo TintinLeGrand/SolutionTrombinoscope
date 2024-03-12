@@ -1,6 +1,11 @@
 ﻿using BddpersonnelContext;
 using DllbddPersonnels;
+using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace AppTrombinoscope
 {
@@ -50,10 +55,17 @@ namespace AppTrombinoscope
             try
             {
                 Personnel personnel = new Personnel();
+
                 personnel.Id = 10;
-                //personnel.Nom = inputAddPerso.Text;
+                personnel.Prenom = prenomTextBox.Text;
+                personnel.Nom = nomTextBox.Text;
+                personnel.Service = (Service)serviceList.SelectedItem;
+                personnel.Fonction = (Fonction)fonctionList.SelectedItem;
+                personnel.Telephone = telephoneTextBox.Text;
+                personnel.Photo = ImageEnByteArray(photo.Source);
+
                 bddPersonnels.NewPersonnel(personnel);
-                LoadData();
+                this.Close();
             }
             catch
             {
@@ -63,12 +75,31 @@ namespace AppTrombinoscope
 
         private void annulerButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+            this.Close();
         }
 
         private void changerPhoto_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Fichiers d'image (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif|Tous les fichiers (*.*)|*.*";
+
+            if(openFileDialog.ShowDialog() == true)
+            {
+                photo.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
+        }
+
+        private byte[] ImageEnByteArray(ImageSource source)
+        {
+            BitmapSource bitmap = (BitmapSource)source;
+
+            using(MemoryStream stream = new MemoryStream())
+            {
+                BitmapEncoder encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(bitmap));
+                encoder.Save(stream);
+                return stream.ToArray();
+            }
         }
     }
 }
