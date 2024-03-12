@@ -52,5 +52,16 @@ namespace AppTrombinoscope
                 MessageBox.Show("Problème d'enregistrement");
             }
         }
+
+        private void modif_Click(object sender, RoutedEventArgs e)
+        {
+            buttonModifService.IsEnabled = true;
+            inputModifService.IsEnabled = true;
+        }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            //suppression
+        }
     }
 }
