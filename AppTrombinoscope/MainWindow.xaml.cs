@@ -122,6 +122,20 @@ namespace AppTrombinoscope
 
         }
 
+        private void Personnel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                GestionPerso fenetre = new GestionPerso(this.bddPersonnels);
+                fenetre.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Problème");
+            }
+
+        }
+
         private void Connexion()
         {
             this.bddPersonnels = new bddpersonnels(Properties.Settings.Default.Username, Properties.Settings.Default.Password, Properties.Settings.Default.AdresseIP, Properties.Settings.Default.Port);

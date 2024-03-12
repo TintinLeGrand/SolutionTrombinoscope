@@ -28,7 +28,7 @@
             <MenuItem Name="gestionButton" Header="_Gestion" Foreground="White" Background="#FF36393E" IsEnabled="False">
                 <MenuItem x:Name="service" Header="_Services" Background="#FF282B30" Click="Services_Click" />
                 <MenuItem x:Name="fonction" Header="_Fonctions" Background="#FF282B30" Click="Fonctions_Click"/>
-                <MenuItem x:Name="personnel" Header="_Personnels" Background="#FF282B30" />
+                <MenuItem x:Name="personnel" Header="_Personnels" Background="#FF282B30" Click="Personnel_Click"/>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem x:Name="gestionnaireButton" Header="_Gestionnaire" Click="Gestionnaire_Click" />
