@@ -12,9 +12,11 @@ namespace AppTrombinoscope
 
         bddpersonnels bddPersonnels;
 
-        public GestionPerso()
+        public GestionPerso(bddpersonnels bddPersonnels)
         {
             InitializeComponent();
+            this.bddPersonnels = bddPersonnels;
+            LoadData();
         }
 
         private void LoadData()
