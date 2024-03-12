@@ -23,7 +23,7 @@
             <Separator Height="100" Width="10"/>
             <MenuItem x:Name="connectionButton" Header="_Connexion BDD" Click="ConnBDD_Click" />
             <Separator Width="10"/>
-            <MenuItem Name="listepersonnelButton" Header="_Liste du Personnel" IsEnabled="False" />
+            <MenuItem Name="listepersonnelButton" Header="_Liste du Personnel" IsEnabled="False" Click="listepersonnelButton_Click" />
             <Separator Width="10"/>
             <MenuItem Name="gestionButton" Header="_Gestion" Foreground="White" Background="#FF36393E" IsEnabled="False">
                 <MenuItem x:Name="service" Header="_Services" Background="#FF282B30" Click="Services_Click" />
