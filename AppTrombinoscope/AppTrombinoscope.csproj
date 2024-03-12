@@ -75,6 +75,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="listePersonnel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,6 +101,9 @@
     </Compile>
     <Compile Include="GestionService.xaml.cs">
       <DependentUpon>GestionService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="listePersonnel.xaml.cs">
+      <DependentUpon>listePersonnel.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

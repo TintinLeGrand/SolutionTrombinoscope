@@ -162,6 +162,10 @@ namespace AppTrombinoscope
                 Console.WriteLine("L'ouverture des paramètres a fonctionné !");
         }
 
-        
+        private void listepersonnelButton_Click(object sender, RoutedEventArgs e)
+        {
+            listePersonnel fenetre = new listePersonnel(bddPersonnels);
+            fenetre.Show();
+        }
     }
 }
