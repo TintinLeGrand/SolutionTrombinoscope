@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Data;
 using BddpersonnelContext;
 using DllbddPersonnels;
 
@@ -166,6 +167,36 @@ namespace AppTrombinoscope
         {
             listePersonnel fenetre = new listePersonnel(bddPersonnels);
             fenetre.Show();
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listeServices.ItemsSource);
+            view.Filter = item => ((string)((Service)item).Intitule).Contains(serviceTextBox.Text);
+        }
+
+        private void fonctionTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listeFonctions.ItemsSource);
+            view.Filter = item => ((string)((Fonction)item).Intitule).Contains(fonctionTextBox.Text);
+        }
+
+        private void telTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listeMembres.ItemsSource);
+            view.Filter = item => ((string)((Personnel)item).Telephone).Trim().Contains(telTextBox.Text.Trim());
+        }
+
+        private void nomTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listeMembres.ItemsSource);
+            view.Filter = item => ((string)((Personnel)item).Nom).Contains(nomTextBox.Text);
+        }
+
+        private void prenomTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listeMembres.ItemsSource);
+            view.Filter = item => ((string)((Personnel)item).Prenom).Contains(prenomTextBox.Text);
         }
     }
 }

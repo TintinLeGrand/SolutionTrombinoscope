@@ -37,7 +37,7 @@
             <Menu/>
         </Menu>
         <TextBlock x:Name="textServices" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Text="Services" FontFamily="Arial"/>
-        <ListBox x:Name="listeServices" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Background="#FF36393E" Foreground="White" DisplayMemberPath="Intitule"/>
+        <ListBox x:Name="listeServices" Grid.Row="1" Margin="24,56" Grid.RowSpan="2" Background="#FF36393E" Foreground="White" DisplayMemberPath="Intitule"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Fonctions" VerticalAlignment="Top"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Membres" VerticalAlignment="Top"/>
         <ListBox x:Name="listeFonctions" Grid.Row="1" Margin="24,56,24,56" Grid.RowSpan="2" Grid.Column="1" Background="#FF36393E" Foreground="White"  DisplayMemberPath="Intitule"/>
@@ -45,17 +45,17 @@
         <Grid Grid.Column="3" Grid.Row="1" Margin="23,69,23,0" Height="58" VerticalAlignment="Top">
             <TextBlock Margin="0,1,158,16" TextWrapping="Wrap" Text="Nom :"/>
             <TextBlock Margin="0,37,138,0" TextWrapping="Wrap" Text="Prénom :"/>
-            <TextBox Margin="84,0,0,0" TextWrapping="Wrap" Height="22" VerticalAlignment="Top"/>
-            <TextBox Margin="84,36,0,0" TextWrapping="Wrap" Height="21" VerticalAlignment="Top"/>
+            <TextBox x:Name="nomTextBox" Margin="84,0,0,0" TextWrapping="Wrap" Height="22" VerticalAlignment="Top" TextChanged="nomTextBox_TextChanged"/>
+            <TextBox x:Name="prenomTextBox" Margin="84,36,0,0" TextWrapping="Wrap" Height="21" VerticalAlignment="Top" TextChanged="prenomTextBox_TextChanged"/>
 
         </Grid>
         <Grid Grid.Column="3" Grid.Row="2" Margin="23,50,23,0" Height="94" VerticalAlignment="Top">
             <TextBlock TextWrapping="Wrap" Text="Service :" Margin="0,1,150,73"/>
             <TextBlock TextWrapping="Wrap" Text="Fonction :" Margin="0,37,139,37"/>
-            <TextBox TextWrapping="Wrap" Margin="84,0,0,0" Height="22" VerticalAlignment="Top"/>
-            <TextBox TextWrapping="Wrap" VerticalAlignment="Top" Margin="84,37,0,0"/>
+            <TextBox x:Name="serviceTextBox" TextWrapping="Wrap" Margin="84,0,0,0" Height="22" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="fonctionTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Margin="84,37,0,0" TextChanged="fonctionTextBox_TextChanged"/>
             <TextBlock TextWrapping="Wrap" Text="Téléphone :" Margin="0,73,128,1"/>
-            <TextBox TextWrapping="Wrap" Margin="84,72,0,0" Height="22" VerticalAlignment="Top"/>
+            <TextBox x:Name="telTextBox" TextWrapping="Wrap" Margin="84,72,0,0" Height="22" VerticalAlignment="Top" TextChanged="telTextBox_TextChanged"/>
 
         </Grid>
 
