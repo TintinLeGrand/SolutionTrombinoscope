@@ -27,7 +27,7 @@
             <ListBox.Resources>
                 <ContextMenu x:Key="ItemContextMenu">
                     <MenuItem Header="Modifier" Click="modif_Click"/>
-                    <MenuItem Header="Supprimmer" Click="delete_Click"/>
+                    <MenuItem Header="Supprimer" Click="delete_Click"/>
                 </ContextMenu>
             </ListBox.Resources>
             <ListBox.ContextMenu>
