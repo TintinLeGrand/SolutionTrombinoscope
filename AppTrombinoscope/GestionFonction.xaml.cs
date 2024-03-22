@@ -43,10 +43,6 @@ namespace AppTrombinoscope
             try
             {
                 Fonction fonction = new Fonction();
-                if(inputAddFct.Text == "")
-                {
-                    throw new System.Exception();
-                }
                 fonction.Intitule = inputAddFct.Text;
                 bddPersonnels.NewFonction(fonction);
                 inputAddFct.Text = "";
@@ -55,6 +51,45 @@ namespace AppTrombinoscope
             catch
             {
                 MessageBox.Show("Problème d'enregistrement");
+            }
+        }
+
+        private void buttonModifFonction_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Fonction service = (Fonction)listeFctGest.SelectedItem;
+                bddPersonnels.ModifyFonction(service, inputModifFonction.Text);
+                inputModifFonction.Text = "";
+                buttonModifFonction.IsEnabled = false;
+                inputModifFonction.IsEnabled = false;
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Problème d'enregistrement");
+            }
+        }
+
+        private void modif_Click(object sender, RoutedEventArgs e)
+        {
+            buttonModifFonction.IsEnabled = true;
+            inputModifFonction.IsEnabled = true;
+            Fonction fonction = (Fonction)listeFctGest.SelectedItem;
+            inputModifFonction.Text = fonction.Intitule;
+        }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Fonction fonction = (Fonction)listeFctGest.SelectedItem;
+                bddPersonnels.DeleteFonction(fonction);
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Il y a des employés de cette fonction. Elle ne peut pas être supprimé.");
             }
         }
     }

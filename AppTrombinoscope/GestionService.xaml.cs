@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using BddpersonnelContext;
 using DllbddPersonnels;
 
@@ -53,15 +54,43 @@ namespace AppTrombinoscope
             }
         }
 
+        private void buttonModifService_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Service service = (Service)listeServicesGest.SelectedItem;
+                bddPersonnels.ModifyService(service,inputModifService.Text);
+                inputModifService.Text = "";
+                buttonModifService.IsEnabled = false;
+                inputModifService.IsEnabled = false;
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Problème d'enregistrement");
+            }
+        }
+
         private void modif_Click(object sender, RoutedEventArgs e)
         {
             buttonModifService.IsEnabled = true;
             inputModifService.IsEnabled = true;
+            Service service = (Service)listeServicesGest.SelectedItem;
+            inputModifService.Text = service.Intitule;
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            //suppression
+            try
+            {
+                Service service = (Service)listeServicesGest.SelectedItem;
+                bddPersonnels.DeleteService(service);
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Il y a des employés dans ce service. Il ne peut pas être supprimé.");
+            }
         }
     }
 }

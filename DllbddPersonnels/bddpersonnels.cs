@@ -95,6 +95,88 @@ namespace DllbddPersonnels
             }
         }
 
+        public void ModifyService(Service leService, string intitule)
+        {
+            try
+            {
+                Service service = bdd.Services.SingleOrDefault(s => s.Id == leService.Id);
+                if(service != null)
+                {
+                    service.Intitule = intitule;
+                    bdd.SubmitChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Service not found.");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void DeleteService(Service leService)
+        {
+            try
+            {
+                if (leService != null)
+                {
+                    bdd.Services.DeleteOnSubmit(leService);
+                    bdd.SubmitChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Service not found.");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException("Il y a des employés dans ce service. Il ne peut pas être supprimé.");
+            }
+        }
+
+        public void DeleteFonction(Fonction laFonction)
+        {
+            try
+            {
+                Fonction fonction = bdd.Fonctions.SingleOrDefault(f => f.Id == laFonction.Id);
+                if (fonction != null)
+                {
+                    bdd.Fonctions.DeleteOnSubmit(fonction);
+                    bdd.SubmitChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Fonction not found.");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void ModifyFonction(Fonction laFonction, string intitule)
+        {
+            try
+            {
+                Fonction fonction = bdd.Fonctions.SingleOrDefault(f => f.Id == laFonction.Id);
+                if (fonction != null)
+                {
+                    fonction.Intitule = intitule;
+                    bdd.SubmitChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Fonction not found.");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
     }
 }
